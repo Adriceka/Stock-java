@@ -20,10 +20,10 @@ public class Bid implements Ofter{
     }
     @Override
     public int compareTo(Ofter bid){
-        return Integer.compare(this.size, bid.value());
+        return Integer.compare(this.bid, bid.value());
     }
     @Override
     public String toString(){
-        return "\t\t" + this.size() + "\t" + this.value()
+        return "\t\t" + this.size() + "\t" + this.value();
     }
 }
