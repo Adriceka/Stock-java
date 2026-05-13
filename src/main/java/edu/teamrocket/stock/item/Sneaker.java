@@ -1,5 +1,6 @@
 package edu.teamrocket.stock.item;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Sneaker  implements Item{
@@ -8,6 +9,7 @@ public class Sneaker  implements Item{
     private int sale;
     private int ask;
     private int bid;
+    private List<Offer> offers = new ArrayList<>();
 
     public Sneaker(String style, String name){
         this.style = style;
@@ -51,11 +53,20 @@ public class Sneaker  implements Item{
     public void setBid(int bid){
         this.bid = bid;
     }
+    
+    public void add(Offer offer) {
+        this.offers.add(offer);
+    }
 
     @Override
     public List<Offer> offers() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'offers'");
+        return this.offers;
     }
+
+    @Override
+    public String toString() {
+        return this.getName() + "\n \t \t" + this.getStyle();
+    }
+
 
 }
