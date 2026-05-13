@@ -1,6 +1,6 @@
 package edu.teamrocket.stock.Item;
 
-public class Bid implements Ofter{
+public class Bid implements Offer{
 
     private String size;
     private Integer bid;
@@ -19,7 +19,7 @@ public class Bid implements Ofter{
         return this.bid;
     }
     @Override
-    public int compareTo(Ofter bid){
+    public int compareTo(Offer bid){
         return Integer.compare(this.bid, bid.value());
     }
     @Override

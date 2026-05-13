@@ -9,7 +9,7 @@ public interface Item {
     void setBid(int bid);
     void setAsk(int ask);
     void setSale(int sale);
-    list<Offer> offers();
+    List<Offer> offers();
 }
 
 

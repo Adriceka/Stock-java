@@ -1,8 +1,8 @@
 package edu.teamrocket.stock.Item;
 
-public interface Ofter extends Comparable<Ofter>{
+public interface Offer extends Comparable<Offer>{
     String size();
     int value();
     @Override
-    int compareTo(Ofter ofter);
+    int compareTo(Offer offer);
 }
