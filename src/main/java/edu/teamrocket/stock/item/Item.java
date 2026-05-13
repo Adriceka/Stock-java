@@ -1,4 +1,4 @@
-package edu.teamrocket.stock.Item;
+package edu.teamrocket.stock.item;
 import java.util.List;
 
 public interface Item {

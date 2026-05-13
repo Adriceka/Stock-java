@@ -1,4 +1,4 @@
-package edu.teamrocket.stock.Item;
+package edu.teamrocket.stock.item;
 
 public interface Offer extends Comparable<Offer>{
     String size();

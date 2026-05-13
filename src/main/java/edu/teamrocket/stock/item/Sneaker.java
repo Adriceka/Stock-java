@@ -1,4 +1,6 @@
-package edu.teamrocket.stock.Item;
+package edu.teamrocket.stock.item;
+
+import java.util.List;
 
 public class Sneaker  implements Item{
     private String style;
@@ -48,6 +50,12 @@ public class Sneaker  implements Item{
     @Override
     public void setBid(int bid){
         this.bid = bid;
+    }
+
+    @Override
+    public List<Offer> offers() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'offers'");
     }
 
 }
