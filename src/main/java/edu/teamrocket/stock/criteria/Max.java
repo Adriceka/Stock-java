@@ -3,7 +3,6 @@ import edu.teamrocket.stock.item.Item;
 import edu.teamrocket.stock.item.Offer;
 import java.util.List;
 import java.util.Collections;
-import java.util.stream.Stream;
 
 public class Max implements Criteria {
     private Criteria criteria;
@@ -19,7 +18,8 @@ public class Max implements Criteria {
         List<Offer> firstList = criteria.checkCriteria(item);
         List<Offer> secondList = otherCriteria.checkCriteria(item);
 
-        return Stream.concat(firstList.stream(), secondList.stream())
+        return firstList.stream()
+                .filter(secondList::contains)
                 .max(Offer::compareTo)
                 .map(Collections::singletonList)
                 .orElse(Collections.emptyList());

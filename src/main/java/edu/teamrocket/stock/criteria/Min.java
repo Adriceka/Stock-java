@@ -1,9 +1,9 @@
 package edu.teamrocket.stock.criteria;
+
 import edu.teamrocket.stock.item.Item;
 import edu.teamrocket.stock.item.Offer;
 import java.util.List;
 import java.util.Collections;
-import java.util.stream.Stream;
 
 public class Min implements Criteria {
     private Criteria criteria;
@@ -19,7 +19,8 @@ public class Min implements Criteria {
         List<Offer> firstList = criteria.checkCriteria(item);
         List<Offer> secondList = otherCriteria.checkCriteria(item);
 
-        return Stream.concat(firstList.stream(), secondList.stream())
+        return firstList.stream()
+                .filter(secondList::contains)
                 .min(Offer::compareTo)
                 .map(Collections::singletonList)
                 .orElse(Collections.emptyList());
